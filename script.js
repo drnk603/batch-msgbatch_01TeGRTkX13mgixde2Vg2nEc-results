@@ -202,8 +202,8 @@
       var linkPath = link.getAttribute('href');
 
       if (linkPath && linkPath.indexOf('#') === -1) {
-        var normalizedLinkPath = linkPath.replace(//$/, '');
-        var normalizedCurrentPath = currentPath.replace(//$/, '');
+        var normalizedLinkPath = linkPath.replace(/\/$/, '');
+        var normalizedCurrentPath = currentPath.replace(/\/$/, '');
 
         if (normalizedLinkPath === normalizedCurrentPath ||
             (normalizedCurrentPath === '' && normalizedLinkPath === '/') ||
@@ -259,7 +259,7 @@
     };
 
     function sanitizeInput(value) {
-      return value.replace(/<script[^>]*>.*?</script>/gi, '').trim();
+      return value.replace(/<script[^>]*>.*?<\/script>/gi, '').trim();
     }
 
     function validateEmail(email) {

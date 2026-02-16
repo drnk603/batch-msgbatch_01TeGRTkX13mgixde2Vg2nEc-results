@@ -1,4 +1,70 @@
 <!DOCTYPE html><html lang="de"><head>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://domain.com/#org",
+      "name": "domain",
+      "url": "https://domain.com",
+      "email": "manager@domain.com",
+      "telephone": "+49 89 9347848",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sony Center, Potsdamer Platz 10, Floor 4, Office 204, 10785 Berlin"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "manager@domain.com",
+        "telephone": "+49 89 9347848"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://domain.com/#website",
+      "url": "https://domain.com",
+      "name": "domain",
+      "publisher": {
+        "@id": "https://domain.com/#org"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://domain.com/careers.html#webpage",
+      "url": "https://domain.com/careers.html",
+      "name": "Karriere - Beratungsexperten gesucht | Strategische Beratung",
+      "isPartOf": {
+        "@id": "https://domain.com/#website"
+      },
+      "about": {
+        "@id": "https://domain.com/#org"
+      },
+      "inLanguage": "de",
+      "description": "Werden Sie Teil unseres Teams. Entdecken Sie offene Stellen im Bereich Beratung und Consulting. Bewerben Sie sich jetzt und gestalten Sie die Zukunft mit uns."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://domain.com/careers.html#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://domain.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Careers.Html",
+          "item": "https://domain.com/careers.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Werden Sie Teil unseres Teams. Entdecken Sie offene Stellen im Bereich Beratung und Consulting. Bewerben Sie sich jetzt und gestalten Sie die Zukunft mit uns.">
@@ -11,31 +77,43 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
- </head>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+<link rel="stylesheet" href="./header-footer.css">
+<link rel="stylesheet" href="./consent.css">
+<script src="./consent.js"></script>
+</head>
  <body>
-  <header class="l-header" role="banner">
-   <nav class="navbar navbar-expand-lg sticky-top bg-white border-bottom" aria-label="Hauptnavigation">
-    <div class="container-fluid l-container">
-     <a class="navbar-brand c-logo" href="/"> <span class="c-logo__text">Strategie &amp; Wachstum</span> </a>
-     <button class="navbar-toggler c-nav__toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Navigation umschalten"><span class="navbar-toggler-icon"></span></button>
-     <div class="collapse navbar-collapse c-nav" id="navbarNav">
-      <ul class="navbar-nav ms-auto c-nav__list">
-       <li class="nav-item c-nav__item"><a class="nav-link" href="/" aria-current="page">Startseite</a></li>
-       <li class="nav-item c-nav__item"><a class="nav-link" href="about.html">Über uns</a></li>
-       <li class="nav-item c-nav__item"><a class="nav-link" href="services.html">Leistungen</a></li>
-       <li class="nav-item c-nav__item"><a class="nav-link" href="careers.html">Karriere</a></li>
-       <li class="nav-item c-nav__item"><a class="nav-link" href="contact.html">Kontakt</a></li>
+<header class="dr-header" data-dr-variant="v2">
+  <div class="dr-header-inner">
+    <nav class="dr-nav dr-nav-left" aria-label="Primary navigation left">
+      <ul class="dr-nav-list">
+        <li class="dr-nav-item"><a class="dr-nav-link" href="./index.html">Home</a></li><li class="dr-nav-item"><a class="dr-nav-link" href="./about.html">About</a></li><li class="dr-nav-item"><a class="dr-nav-link" href="./careers.html">Careers</a></li>
       </ul>
-      <div class="d-lg-block ms-lg-3">
-       <a href="contact.html" class="c-button c-button--primary">Beratung anfragen</a>
-      </div>
-     </div>
-    </div>
-   </nav>
-  </header>
+    </nav>
+
+    <a class="dr-logo dr-logo-center" href="./index.html" aria-label="domain">domain</a>
+
+    <nav class="dr-nav dr-nav-right" aria-label="Primary navigation right">
+      <ul class="dr-nav-list">
+        <li class="dr-nav-item"><a class="dr-nav-link" href="./contact.html">Contact</a></li><li class="dr-nav-item"><a class="dr-nav-link" href="./services.html">Services</a></li>
+      </ul>
+    </nav>
+
+    <button class="dr-burger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="dr-mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<nav class="dr-mobile-menu" id="dr-mobile-menu" aria-label="Mobile navigation">
+  <ul class="dr-mobile-nav-list">
+    <li class="dr-nav-item"><a class="dr-nav-link" href="./index.html">Home</a></li><li class="dr-nav-item"><a class="dr-nav-link" href="./about.html">About</a></li><li class="dr-nav-item"><a class="dr-nav-link" href="./careers.html">Careers</a></li><li class="dr-nav-item"><a class="dr-nav-link" href="./contact.html">Contact</a></li><li class="dr-nav-item"><a class="dr-nav-link" href="./services.html">Services</a></li>
+  </ul>
+</nav>
+
   <main>
    <section class="l-section py-4 py-md-5" style="scroll-margin-top: var(--header-h);">
-    <div class="l-container">
+    <div class="container">
      <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
        <li class="breadcrumb-item"><a href="index.html">Startseite</a></li>
@@ -57,7 +135,7 @@
     </div>
    </section>
    <section class="l-section py-4 py-md-5" style="scroll-margin-top: var(--header-h);">
-    <div class="l-container">
+    <div class="container">
      <div class="row text-center mb-4">
       <div class="col-12" data-aos="fade-up">
        <h2>Warum domain?</h2>
@@ -147,7 +225,7 @@
     </div>
    </section>
    <section class="l-section py-4 py-md-5" style="scroll-margin-top: var(--header-h);">
-    <div class="l-container">
+    <div class="container">
      <div class="row text-center mb-4">
       <div class="col-12" data-aos="fade-up">
        <h2>Offene Stellen</h2>
@@ -253,7 +331,7 @@
     </div>
    </section>
    <section class="l-section py-4 py-md-5" style="scroll-margin-top: var(--header-h); background: linear-gradient(135deg, rgba(94, 156, 149, 0.1) 0%, rgba(204, 124, 78, 0.1) 100%);">
-    <div class="l-container">
+    <div class="container">
      <div class="row text-center mb-4">
       <div class="col-12" data-aos="fade-up">
        <h2>Was unsere Mitarbeiter sagen</h2>
@@ -313,7 +391,7 @@
     </div>
    </section>
    <section class="l-section py-4 py-md-5" id="praktikum" style="scroll-margin-top: var(--header-h);">
-    <div class="l-container">
+    <div class="container">
      <div class="row align-items-center">
       <div class="col-12 col-lg-6" data-aos="fade-right">
        <div class="ratio ratio-16x9">
@@ -345,7 +423,7 @@
     </div>
    </section>
    <section class="l-section py-4 py-md-5" id="bewerbung" style="scroll-margin-top: var(--header-h); background: linear-gradient(135deg, rgba(94, 156, 149, 0.05) 0%, rgba(204, 124, 78, 0.05) 100%);">
-    <div class="l-container">
+    <div class="container">
      <div class="row justify-content-center">
       <div class="col-12 col-lg-8" data-aos="fade-up">
        <div class="c-card">
@@ -398,7 +476,7 @@
          </form>
          <div class="mt-4 text-center">
           <p class="mb-2">Oder senden Sie Ihre Bewerbung direkt per E-Mail:</p>
-          <p><a href="mailto:info@domain.com">info@domain.com</a></p>
+          <p><a href="mailto:manager@domain.com">manager@domain.com</a></p>
          </div>
         </div>
        </div>
@@ -407,7 +485,7 @@
     </div>
    </section>
    <section class="l-section py-4 py-md-5" style="scroll-margin-top: var(--header-h);">
-    <div class="l-container">
+    <div class="container">
      <div class="row text-center">
       <div class="col-12" data-aos="fade-up">
        <h2>Bereit für den nächsten Schritt?</h2>
@@ -418,68 +496,61 @@
     </div>
    </section>
   </main>
-  <footer class="l-footer" role="contentinfo">
-   <div class="l-footer__main py-4 py-md-5">
-    <div class="l-container">
-     <div class="row">
-      <div class="col-lg-4 mb-4 mb-lg-0">
-       <h3 class="h5 mb-3">Strategie &amp; Wachstum</h3>
-       <p class="mb-3">Ihr kompetenter Partner für strategische Unternehmensberatung in Deutschland. Wir unterstützen Sie auf dem Weg zu nachhaltigem Erfolg.</p>
-       <div class="l-footer__social">
-        <a href="#" class="l-footer__social-link" aria-label="LinkedIn"> 
-         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
-         </svg> 
-        </a> <a href="#" class="l-footer__social-link" aria-label="XING"> 
-         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"></path>
-         </svg> 
-        </a>
-       </div>
+  <footer class="dr-footer" aria-label="Seitenende">
+  <div class="dr-footer-inner">
+    <div class="dr-footer-top">
+      <div class="dr-footer-brand">
+        <div class="dr-footer-logo">Strategie &amp; Wachstum</div>
+        <p class="dr-footer-tagline">domain – Strategische Lösungen für nachhaltiges Wachstum.</p>
       </div>
-      <div class="col-lg-2 col-md-4 mb-4 mb-lg-0">
-       <h4 class="h6 mb-3">Unternehmen</h4>
-       <ul class="l-footer__links">
-        <li><a href="about.html">Über uns</a></li>
-        <li><a href="services.html">Leistungen</a></li>
-        <li><a href="careers.html">Karriere</a></li>
-        <li><a href="contact.html">Kontakt</a></li>
-       </ul>
-      </div>
-      <div class="col-lg-3 col-md-4 mb-4 mb-lg-0">
-       <h4 class="h6 mb-3">Rechtliches</h4>
-       <ul class="l-footer__links">
-        <li><a href="impressum.html">Impressum</a></li>
-        <li><a href="privacy.html">Datenschutz</a></li>
-        <li><a href="terms_of_services.html">AGB</a></li>
-        <li><a href="cookie_policy.html">Cookie-Richtlinie</a></li>
-        <li><a href="gdpr-rights.html">DSGVO-Rechte</a></li>
-       </ul>
-      </div>
-      <div class="col-lg-3 col-md-4">
-       <h4 class="h6 mb-3">Kontakt</h4>
-       <address class="l-footer__contact">
-        <p class="mb-2">{address}</p>
-        <p class="mb-2"><a href="tel:{telephone}">{telephone}</a></p>
-        <p><a href="mailto:info@domain.com">info@domain.com</a></p>
-       </address>
-      </div>
-     </div>
+      <nav class="dr-footer-nav" aria-label="Hauptnavigation im Footer">
+        <h2 class="dr-footer-heading">Navigation</h2>
+        <ul class="dr-footer-nav-list">
+          <li class="dr-footer-nav-item"><a href="./index.html" class="dr-footer-link">Home</a></li>
+          <li class="dr-footer-nav-item"><a href="./about.html" class="dr-footer-link">About</a></li>
+          <li class="dr-footer-nav-item"><a href="./careers.html" class="dr-footer-link">Careers</a></li>
+          <li class="dr-footer-nav-item"><a href="./contact.html" class="dr-footer-link">Contact</a></li>
+          <li class="dr-footer-nav-item"><a href="./services.html" class="dr-footer-link">Services</a></li>
+        </ul>
+      </nav>
+      <nav class="dr-footer-legal" aria-label="Rechtliches">
+        <h2 class="dr-footer-heading">Rechtliches</h2>
+        <ul class="dr-footer-legal-list">
+          <li class="dr-footer-legal-item"><a href="./privacy.html" class="dr-footer-link">Privacy Policy</a></li>
+          <li class="dr-footer-legal-item"><a href="./terms_of_services.html" class="dr-footer-link">Terms of Service</a></li>
+          <li class="dr-footer-legal-item"><a href="./terms_and_conditions.html" class="dr-footer-link">Terms and Conditions</a></li>
+          <li class="dr-footer-legal-item"><a href="./cookie_policy.html" class="dr-footer-link">Cookie Policy</a></li>
+          <li class="dr-footer-legal-item"><a href="./gdpr-rights.html" class="dr-footer-link">GDPR Rights</a></li>
+          <li class="dr-footer-legal-item"><a href="./impressum.html" class="dr-footer-link">Impressum</a></li>
+        </ul>
+      </nav>
+      <section class="dr-footer-contact" aria-label="Kontakt">
+        <h2 class="dr-footer-heading">Kontakt</h2>
+        <ul class="dr-footer-contact-list">
+          <li class="dr-footer-contact-item"><span class="dr-footer-contact-label">Adresse:</span> <span class="dr-footer-contact-value">Sony Center, Potsdamer Platz 10, Floor 4, Office 204, 10785 Berlin</span></li>
+          <li class="dr-footer-contact-item"><span class="dr-footer-contact-label">Telefon:</span> <a href="tel:+49 89 9347848" class="dr-footer-link">+49 89 9347848</a></li>
+          <li class="dr-footer-contact-item"><span class="dr-footer-contact-label">E-Mail:</span> <a href="mailto:manager@domain.com" class="dr-footer-link">manager@domain.com</a></li>
+        </ul>
+      </section>
     </div>
-   </div>
-   <div class="l-footer__bottom py-3">
-    <div class="l-container">
-     <div class="row align-items-center">
-      <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
-       <p class="mb-0">© 2025 Strategie &amp; Wachstum Consulting. Alle Rechte vorbehalten.</p>
-      </div>
-      <div class="col-md-6 text-center text-md-end">
-       <p class="mb-0">Entwickelt mit Leidenschaft in München</p>
-      </div>
-     </div>
+    <div class="dr-footer-bottom">
+      <p class="dr-footer-disclaimer">Die Informationen auf dieser Website werden von domain bereitgestellt. Alle Inhalte auf domain.com dienen ausschließlich allgemeinen Informationszwecken und stellen keine rechtliche, steuerliche oder finanzielle Beratung dar.</p>
+      <p class="dr-footer-meta"><span class="dr-year"></span> © domain. All rights reserved.</p>
     </div>
-   </div>
-  </footer>
-  <script src="script.js" defer=""></script>
+  </div>
+</footer>
+  
  
+  
+  
+
+<script src="script.js" defer=""></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+if (typeof AOS !== "undefined" && !window.__AOS_INITIALIZED__) {
+  AOS.init({ once: true, duration: 700, easing: "ease-out-cubic" });
+  window.__AOS_INITIALIZED__ = true;
+}
+</script>
+<script src="./header-footer.js"></script>
 </body></html>

@@ -819,7 +819,6 @@ address {
   padding: var(--space-xl);
   box-shadow: var(--shadow-subtle);
   transition: var(--transition);
-  height: 100%;
 }
 
 .c-card:hover,
